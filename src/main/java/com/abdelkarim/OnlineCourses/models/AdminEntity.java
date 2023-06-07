@@ -47,9 +47,15 @@ public class AdminEntity implements Serializable {
 		
 		
 		
-		
 		@Column(name="mail")
 		private String mail;
+		
+		
+		
+		@Column(name="password")
+		private String password;
+		
+		
 	
 	
 
