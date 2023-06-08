@@ -22,7 +22,6 @@ public class StudentEntity implements Serializable{
 	
 	
 	@Id
-	@GeneratedValue
 	private Integer id;
 	
 	
