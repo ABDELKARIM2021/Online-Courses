@@ -24,7 +24,6 @@ public class CourseEntity implements Serializable {
 
 
 	@Id
-	@GeneratedValue
 	private Integer id;
 	
 	
