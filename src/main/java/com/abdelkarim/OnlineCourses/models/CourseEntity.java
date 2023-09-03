@@ -1,42 +1,58 @@
 package com.abdelkarim.OnlineCourses.models;
 
-import java.io.Serializable;
-
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.io.Serial;
+import java.io.Serializable;
+import java.util.List;
+
 
 @Entity
-@Table(name="Course")
+@Table(name="courseone")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 public class CourseEntity implements Serializable {
-	
-	
+
+
+	@Serial
 	private static final long serialVersionUID = 1L;
 
-
 	@Id
+	@GeneratedValue()
 	private Integer id;
-	
-	
-	@Column(name="ref")
+
+	@Column()
 	private String ref;
-		
-	
-	@Column(name="categorie")
+
+	@Column()
 	private String categorie;
-	
-	
-	@Column(name="description")
+
+	@Column()
 	private String description;
-	
+
+
+	@Column()
+	private String fileName;
+
+	@Column()
+	private String fileURL;
+
+	@Column
+	private String videoName;
+
+	@Column()
+	private String videoURL;
+
+	@ManyToOne
+	private AdminEntity admin;
+
+	@ManyToMany
+	private List<StudentEntity> students;
 
 }

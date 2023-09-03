@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test</title>
+</head>
+<body>
+<form method="post" action="http://localhost:8080/course/save" enctype="multipart/form-data">
+  <label for="ref">Référence :</label>
+  <input type="text" name="ref" id="ref">
+
+  <label for="categorie">Catégorie :</label>
+  <input type="text" name="categorie" id="categorie">
+
+  <label for="description">Description :</label>
+  <textarea name="description" id="description"></textarea>
+
+  <label for="file">Fichier :</label>
+  <input type="file" name="file" id="file">
+
+  <label for="video">Vidéo :</label>
+  <input type="file" name="video" id="video">
+
+  <button type="submit">Enregistrer</button>
+</form>
+
+
+</body>
+</html>

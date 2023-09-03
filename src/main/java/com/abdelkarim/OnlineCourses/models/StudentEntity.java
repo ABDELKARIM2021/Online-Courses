@@ -1,15 +1,13 @@
 package com.abdelkarim.OnlineCourses.models;
 
-import java.io.Serializable;
-
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.io.Serializable;
+import java.util.List;
 
 
 @Entity
@@ -17,31 +15,28 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 public class StudentEntity implements Serializable{
 	
 	
 	
 	@Id
+	@GeneratedValue
 	private Integer id;
-	
-	
-	
+
 	@Column(name="nom")
 	private String nom;
-	
-	
-	
+
 	@Column(name="prenom")
 	private String prenom;
-	
-	
-	
+
 	@Column(name="mail")
 	private String mail;
-	
-	
-	
+
 	@Column(name="password")
 	private String password;
+
+	@ManyToMany(mappedBy = "students")
+	private List<CourseEntity> courses;
 
 }
